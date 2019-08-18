@@ -1,0 +1,11 @@
+{
+  "name": "001-tasklist",
+  "version": "1.0.0",
+  "description": "Task List Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dariusz Okonski",
+  "license": "ISC"
+}
