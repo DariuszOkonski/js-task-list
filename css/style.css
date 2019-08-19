@@ -44,4 +44,53 @@ body .wrapper {
   background-color: #fff;
   border-radius: 15px;
 }
+
+body .header__task-list {
+  color: #444;
+  font-size: 2.4rem;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+body .header__label {
+  display: block;
+  color: #444;
+  font-size: 1.6rem;
+  margin-left: 2.9rem;
+  margin-top: 3.6rem;
+}
+
+body .header__input {
+  display: block;
+  height: 2.8rem;
+  width: 40.8rem;
+  margin-left: 3rem;
+  margin-top: 0.8rem;
+  border-radius: 0.4rem;
+  border: 1px solid black;
+  font-size: 1.4rem;
+  padding: 0 0.5rem;
+  color: #444;
+}
+
+body .header__btn {
+  display: block;
+  width: 11.6rem;
+  height: 2.1rem;
+  background-color: #049A37;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-left: 3rem;
+  margin-top: 2.1rem;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+body .header__btn:hover {
+  background-color: #03812e;
+}
 /*# sourceMappingURL=style.css.map */

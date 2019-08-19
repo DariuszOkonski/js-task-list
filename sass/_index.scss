@@ -14,4 +14,54 @@ body {
     background-color: #fff;
     border-radius: 15px;
   }
+
+  .header {
+    &__task-list {
+      color: $basic-gray;
+      font-size: 2.4rem;
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    &__label {
+      display: block;
+      color: $basic-gray;
+      font-size: 1.6rem;
+      margin-left: 2.9rem;
+      margin-top: 3.6rem;
+    }
+
+    &__input {
+      display: block;
+      height: 2.8rem;
+      width: 40.8rem;
+      margin-left: 3rem;
+      margin-top: 0.8rem;
+      border-radius: 0.4rem;
+      border: 1px solid black;
+      font-size: 1.4rem;
+      padding: 0 0.5rem;
+      color: $basic-gray;
+    }
+
+    &__btn {
+      display: block;
+      width: 11.6rem;
+      height: 2.1rem;
+      background-color: $btn-green;
+      color: $btn-font-color;
+      border: none;
+      border-radius: 0.8rem;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      cursor: pointer;
+      margin-left: 3rem;
+      margin-top: 2.1rem;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($btn-green, 5%);
+      }
+    }
+  }
 }
