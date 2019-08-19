@@ -1,0 +1,17 @@
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $body-color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    width: 90%;
+    max-width: 564px;
+    min-height: 826px;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+}
