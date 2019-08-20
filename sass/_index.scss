@@ -45,28 +45,59 @@ body {
     &__input {
       @include task-input;
     }
+
+    // &__btn-done {}
+
   }
 
   .task-columns {
-    background-color: yellow;
     width: 50.4rem;
     margin: 0 auto;
+    margin-top: 3.3rem;
 
     display: flex;
     justify-content: space-between;
 
     .columns {
-      background-color: green;
+      flex-basis: 24.2rem;
 
       &__tasks {
-        @include task-header(2rem, 3.3rem);
+        @include task-header(2rem, 0rem);
       }
 
       &__items {
         list-style: none;
+        width: 100%;
+        max-width: 24.2rem;
+        min-height: 31.1rem;
+        border: 1px solid black;
+        border-radius: 0.4rem;
+        margin-top: 1.9rem;
+        padding: 1.4rem 0.7rem;
       }
 
-      &__item {}
+      &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+
+        .btns {
+          &__btn-done {
+            @include btn(3.7rem, 2.1rem, $btn-blue, $btn-font-color, 0.8rem, 0.8rem, 0rem, 0rem);
+          }
+
+          &__btn-remove {
+            @include btn(4.8rem, 2.1rem, $btn-red, $btn-font-color, 0.8rem, 0.8rem, 0rem, 0rem);
+          }
+        }
+      }
+
+      &__btn {
+        @include btn(14.5rem, 2.1rem, $btn-black, $btn-font-color, 0.8rem, 1.2rem, 0rem, 3.6rem, 3.9rem);
+      }
     }
   }
 }

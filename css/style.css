@@ -74,7 +74,7 @@ body .header__input {
 }
 
 body .header__btn {
-  display: block;
+  display: inline-block;
   width: 11.6rem;
   height: 2.1rem;
   background-color: #049A37;
@@ -86,6 +86,7 @@ body .header__btn {
   cursor: pointer;
   margin-left: 3rem;
   margin-top: 2.1rem;
+  margin-bottom: 0rem;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
@@ -123,9 +124,9 @@ body .filter__input {
 }
 
 body .task-columns {
-  background-color: yellow;
   width: 50.4rem;
   margin: 0 auto;
+  margin-top: 3.3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,17 +136,105 @@ body .task-columns {
 }
 
 body .task-columns .columns {
-  background-color: green;
+  -ms-flex-preferred-size: 24.2rem;
+      flex-basis: 24.2rem;
 }
 
 body .task-columns .columns__tasks {
   color: #444;
   font-size: 2rem;
   text-align: center;
-  margin-top: 3.3rem;
+  margin-top: 0rem;
 }
 
 body .task-columns .columns__items {
   list-style: none;
+  width: 100%;
+  max-width: 24.2rem;
+  min-height: 31.1rem;
+  border: 1px solid black;
+  border-radius: 0.4rem;
+  margin-top: 1.9rem;
+  padding: 1.4rem 0.7rem;
+}
+
+body .task-columns .columns__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+body .task-columns .columns__item .btns__btn-done {
+  display: inline-block;
+  width: 3.7rem;
+  height: 2.1rem;
+  background-color: #1410EA;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 0rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+body .task-columns .columns__item .btns__btn-done:hover {
+  background-color: #120ed2;
+}
+
+body .task-columns .columns__item .btns__btn-remove {
+  display: inline-block;
+  width: 4.8rem;
+  height: 2.1rem;
+  background-color: #EA1010;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 0rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+body .task-columns .columns__item .btns__btn-remove:hover {
+  background-color: #d20e0e;
+}
+
+body .task-columns .columns__btn {
+  display: inline-block;
+  width: 14.5rem;
+  height: 2.1rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 0rem;
+  margin-top: 3.6rem;
+  margin-bottom: 3.9rem;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+body .task-columns .columns__btn:hover {
+  background-color: black;
 }
 /*# sourceMappingURL=style.css.map */
