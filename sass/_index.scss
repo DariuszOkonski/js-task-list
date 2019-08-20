@@ -17,51 +17,56 @@ body {
 
   .header {
     &__task-list {
-      color: $basic-gray;
-      font-size: 2.4rem;
-      text-align: center;
-      margin-top: 3.5rem;
+      @include task-header(2.4rem, 3.5rem);
     }
 
     &__label {
-      display: block;
-      color: $basic-gray;
-      font-size: 1.6rem;
-      margin-left: 2.9rem;
-      margin-top: 3.6rem;
+      @include task-label(3.6rem);
     }
 
     &__input {
-      display: block;
-      height: 2.8rem;
-      width: 40.8rem;
-      margin-left: 3rem;
-      margin-top: 0.8rem;
-      border-radius: 0.4rem;
-      border: 1px solid black;
-      font-size: 1.4rem;
-      padding: 0 0.5rem;
-      color: $basic-gray;
+      @include task-input;
     }
 
     &__btn {
-      display: block;
-      width: 11.6rem;
-      height: 2.1rem;
-      background-color: $btn-green;
-      color: $btn-font-color;
-      border: none;
-      border-radius: 0.8rem;
-      text-transform: uppercase;
-      font-size: 1.6rem;
-      cursor: pointer;
-      margin-left: 3rem;
-      margin-top: 2.1rem;
-      transition: background-color 0.3s ease;
+      @include btn(11.6rem, 2.1rem, $btn-green, $btn-font-color, 0.8rem, 1.6rem, 3rem, 2.1rem);
+    }
+  }
 
-      &:hover {
-        background-color: darken($btn-green, 5%);
+  .filter {
+    &__tasks {
+      @include task-header(2.4rem, 4.1rem);
+    }
+
+    &__label {
+      @include task-label(3.5rem);
+    }
+
+    &__input {
+      @include task-input;
+    }
+  }
+
+  .task-columns {
+    background-color: yellow;
+    width: 50.4rem;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    .columns {
+      background-color: green;
+
+      &__tasks {
+        @include task-header(2rem, 3.3rem);
       }
+
+      &__items {
+        list-style: none;
+      }
+
+      &__item {}
     }
   }
 }
