@@ -1,0 +1,48 @@
+@mixin task-header($font-size, $margin-top) {
+  color: $basic-gray;
+  font-size: $font-size;
+  text-align: center;
+  margin-top: $margin-top;
+}
+
+@mixin task-label($margin_top) {
+  display: block;
+  color: $basic-gray;
+  font-size: 1.6rem;
+  margin-left: 2.9rem;
+  // margin-top: 3.6rem;
+  margin-top: $margin_top;
+}
+
+@mixin task-input {
+  display: block;
+  height: 2.8rem;
+  width: 40.8rem;
+  margin-left: 3rem;
+  margin-top: 0.8rem;
+  border-radius: 0.4rem;
+  border: 1px solid black;
+  font-size: 1.4rem;
+  padding: 0 0.5rem;
+  color: $basic-gray;
+}
+
+@mixin btn($width, $height, $bg-color, $color, $border-radius, $font-size, $margin-left, $margin-top) {
+  display: block;
+  width: $width;
+  height: $height;
+  background-color: $bg-color;
+  color: $color;
+  border: none;
+  border-radius: $border-radius;
+  text-transform: uppercase;
+  font-size: $font-size;
+  cursor: pointer;
+  margin-left: $margin-left;
+  margin-top: $margin-top;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($bg-color, 5%);
+  }
+}
