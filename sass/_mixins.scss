@@ -27,8 +27,8 @@
   color: $basic-gray;
 }
 
-@mixin btn($width, $height, $bg-color, $color, $border-radius, $font-size, $margin-left, $margin-top) {
-  display: block;
+@mixin btn($width, $height, $bg-color, $color, $border-radius, $font-size, $margin-left, $margin-top, $margin-bottom: 0rem) {
+  display: inline-block;
   width: $width;
   height: $height;
   background-color: $bg-color;
@@ -40,6 +40,7 @@
   cursor: pointer;
   margin-left: $margin-left;
   margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
   transition: background-color 0.3s ease;
 
   &:hover {
