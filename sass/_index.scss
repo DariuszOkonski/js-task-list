@@ -92,6 +92,10 @@ body {
           &__btn-remove {
             @include btn(4.8rem, 2.1rem, $btn-red, $btn-font-color, 0.8rem, 0.8rem, 0rem, 0rem);
           }
+
+          &__btn-back {
+            @include btn(4.8rem, 2.1rem, $btn-green, $btn-font-color, 0.8rem, 0.8rem, 0rem, 0rem);
+          }
         }
       }
 
