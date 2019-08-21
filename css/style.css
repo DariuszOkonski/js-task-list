@@ -259,4 +259,179 @@ body .task-columns .columns__btn {
 body .task-columns .columns__btn:hover {
   background-color: #333333;
 }
+
+@media (max-width: 570px) {
+  body .wrapper {
+    width: 90%;
+    max-width: 445px;
+    min-height: 826px;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+  body .header__input {
+    display: block;
+    height: 2.8rem;
+    width: 36.8rem;
+    margin-left: 3rem;
+    margin-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+    color: #444;
+  }
+  body .filter__input {
+    display: block;
+    height: 2.8rem;
+    width: 36.8rem;
+    margin-left: 3rem;
+    margin-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+    color: #444;
+  }
+  body .task-columns {
+    width: 44.4rem;
+    margin: 0 auto;
+    margin-top: 3.3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .task-columns .columns {
+    -ms-flex-preferred-size: 94%;
+        flex-basis: 94%;
+  }
+  body .task-columns .columns__items {
+    list-style: none;
+    width: 100%;
+    max-width: 35.2rem;
+    min-height: 31.1rem;
+    margin: 0 auto;
+    margin-top: 1.9rem;
+  }
+  body .task-columns .columns__btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  body .wrapper {
+    width: 100%;
+  }
+  body .task-columns {
+    width: 36.4rem;
+  }
+}
+
+@media (max-width: 410px) {
+  body .wrapper {
+    width: 100%;
+    max-width: 410px;
+  }
+  body .header__input {
+    display: block;
+    height: 2.8rem;
+    width: 32.8rem;
+    margin-left: 3rem;
+    margin-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+    color: #444;
+  }
+  body .filter__input {
+    display: block;
+    height: 2.8rem;
+    width: 32.8rem;
+    margin-left: 3rem;
+    margin-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+    color: #444;
+  }
+  body .task-columns {
+    width: 36.4rem;
+  }
+}
+
+@media (max-width: 360px) {
+  body .wrapper {
+    width: 100%;
+    max-width: 360px;
+  }
+  body .header__input {
+    display: block;
+    height: 2.8rem;
+    width: 27.8rem;
+    margin-left: 3rem;
+    margin-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+    color: #444;
+  }
+  body .filter__input {
+    display: block;
+    height: 2.8rem;
+    width: 27.8rem;
+    margin-left: 3rem;
+    margin-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+    color: #444;
+  }
+  body .task-columns {
+    width: 34.4rem;
+  }
+}
+
+@media (max-width: 320px) {
+  body .wrapper {
+    width: 100%;
+    max-width: 320px;
+  }
+  body .header__input {
+    display: block;
+    height: 2.8rem;
+    width: 24.8rem;
+    margin-left: 3rem;
+    margin-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+    color: #444;
+  }
+  body .filter__input {
+    display: block;
+    height: 2.8rem;
+    width: 24.8rem;
+    margin-left: 3rem;
+    margin-top: 0.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid black;
+    font-size: 1.4rem;
+    padding: 0 0.5rem;
+    color: #444;
+  }
+  body .task-columns {
+    width: 30.4rem;
+  }
+}
 /*# sourceMappingURL=style.css.map */
