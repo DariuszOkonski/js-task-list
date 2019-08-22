@@ -162,14 +162,32 @@ body .task-columns .columns__item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 1.4rem;
   margin-bottom: 0.8rem;
+}
+
+body .task-columns .columns__item .paragraph {
+  max-width: 90%;
+  text-align: center;
+}
+
+body .task-columns .columns__item .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
 }
 
 body .task-columns .columns__item .btns__btn-done {
@@ -183,7 +201,7 @@ body .task-columns .columns__item .btns__btn-done {
   text-transform: uppercase;
   font-size: 0.8rem;
   cursor: pointer;
-  margin-left: 0rem;
+  margin-left: 0.5rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
   -webkit-transition: background-color 0.3s ease;
@@ -205,7 +223,7 @@ body .task-columns .columns__item .btns__btn-remove {
   text-transform: uppercase;
   font-size: 0.8rem;
   cursor: pointer;
-  margin-left: 0rem;
+  margin-left: 0.5rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
   -webkit-transition: background-color 0.3s ease;
@@ -227,7 +245,7 @@ body .task-columns .columns__item .btns__btn-back {
   text-transform: uppercase;
   font-size: 0.8rem;
   cursor: pointer;
-  margin-left: 0rem;
+  margin-left: 0.5rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
   -webkit-transition: background-color 0.3s ease;
