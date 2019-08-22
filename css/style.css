@@ -95,6 +95,10 @@ body .header__btn:hover {
   background-color: #0bf95c;
 }
 
+body .disactive .header__btn:hover {
+  background-color: #049a37;
+}
+
 body .filter__tasks {
   color: #444;
   font-size: 2.4rem;
@@ -276,6 +280,11 @@ body .task-columns .columns__btn {
 
 body .task-columns .columns__btn:hover {
   background-color: #333333;
+}
+
+body .disactive {
+  -webkit-filter: blur(3px) grayscale(1);
+          filter: blur(3px) grayscale(1);
 }
 
 @media (max-width: 570px) {
