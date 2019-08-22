@@ -78,23 +78,34 @@ body {
 
       &__item {
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: space-between;
 
         font-size: 1.4rem;
         margin-bottom: 0.8rem;
 
+        .paragraph {
+          max-width: 90%;
+          text-align: center;
+        }
+
         .btns {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-content: space-around;
+
+
           &__btn-done {
-            @include btn(3.7rem, 2.1rem, $btn-blue, $btn-font-color, 0.8rem, 0.8rem, 0rem, 0rem);
+            @include btn(3.7rem, 2.1rem, $btn-blue, $btn-font-color, 0.8rem, 0.8rem, 0.5rem, 0rem);
           }
 
           &__btn-remove {
-            @include btn(4.8rem, 2.1rem, $btn-red, $btn-font-color, 0.8rem, 0.8rem, 0rem, 0rem);
+            @include btn(4.8rem, 2.1rem, $btn-red, $btn-font-color, 0.8rem, 0.8rem, 0.5rem, 0.0rem);
           }
 
           &__btn-back {
-            @include btn(4.8rem, 2.1rem, $btn-green, $btn-font-color, 0.8rem, 0.8rem, 0rem, 0rem);
+            @include btn(4.8rem, 2.1rem, $btn-green, $btn-font-color, 0.8rem, 0.8rem, 0.5rem, 0rem);
           }
         }
       }
