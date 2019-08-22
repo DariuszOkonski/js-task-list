@@ -31,6 +31,13 @@ body {
     &__btn {
       @include btn(11.6rem, 2.1rem, $btn-green, $btn-font-color, 0.8rem, 1.6rem, 3rem, 2.1rem);
     }
+
+  }
+
+  .disactive {
+    .header__btn:hover {
+      background-color: lighten($btn-green, 0%);
+    }
   }
 
   .filter {
@@ -114,6 +121,10 @@ body {
         @include btn(14.5rem, 2.1rem, $btn-black, $btn-font-color, 0.8rem, 1.2rem, 0rem, 3.6rem, 3.9rem);
       }
     }
+  }
+
+  .disactive {
+    filter: blur(3px) grayscale(1);
   }
 
   //====================================== media queries
