@@ -19,9 +19,9 @@
       <h1 class="header__task-list">Task List</h1>
 
       <label for="newTask" class="header__label">New Task</label>
-      <input type="text" name="newTask" class="header__input" placeholder="Type new task...">
+      <input type="text" name="newTask" class="header__input header__input--js" placeholder="Type new task...">
 
-      <button class="header__btn">add task</button>
+      <button class="header__btn header__btn--js">add task</button>
     </header>
 
     <section class="filter">
@@ -34,21 +34,18 @@
 
       <div class="columns">
         <h2 class="columns__tasks">Task Will Do</h2>
-        <ul class="columns__items">
-          <li class="columns__item">
-            Task One
+        <ul class="columns__items columns__items--js">
+
+          <!-- <li class="columns__item">
+            <p class="paragraph">Lorem ipsum quidem neque hic cumque corporis quod iure ipsum! Unde, similique possimus.
+            </p>
+
             <div class="btns">
-              <button class="btns__btn-done">done</button>
-              <button class="btns__btn-remove">remove</button>
+              <button class="btns__btn-done btns__btn-done--js">done</button>
+              <button class="btns__btn-remove btns__btn-remove--js">remove</button>
             </div>
-          </li>
-          <li class="columns__item">
-            Task One
-            <div class="btns">
-              <button class="btns__btn-done">done</button>
-              <button class="btns__btn-remove">remove</button>
-            </div>
-          </li>
+          </li> -->
+
         </ul>
 
         <button class="columns__btn">clear tasks will do</button>
@@ -57,21 +54,15 @@
       <div class="columns">
         <h2 class="columns__tasks">Task Done</h2>
         <ul class="columns__items">
-          <li class="columns__item">
-            Task One
-            <div class="btns">
-              <button class="btns__btn-back">back</button>
-              <button class="btns__btn-remove">remove</button>
-            </div>
-          </li>
 
-          <li class="columns__item">
-            Task One
+          <!-- <li class="columns__item">
+            <p class="paragraph">Lorem ipsum</p>
+
             <div class="btns">
               <button class="btns__btn-back">back</button>
               <button class="btns__btn-remove">remove</button>
             </div>
-          </li>
+          </li> -->
 
         </ul>
 
@@ -82,6 +73,7 @@
 
   </div>
 
+  <script src="app.js"></script>
 </body>
 
 </html>
