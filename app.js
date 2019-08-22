@@ -1,6 +1,9 @@
 const inputNewTask = document.querySelector('.header__input--js');
 const taskWillDoColumn = document.querySelector('.columns__items--js');
 
+const columnOne = [];
+const columnTwo = [];
+
 function addTask() {
   if (inputNewTask.value.length === 0) {
     return alert('Add new Task');
@@ -10,6 +13,9 @@ function addTask() {
   li.className = 'columns__item';
 
   const newTask = inputNewTask.value;
+  columnOne.push(newTask)
+  localStorage.setItem('column-one', columnOne);
+
   const p = document.createElement('p');
   p.className = 'paragraph';
   p.innerText = newTask;
