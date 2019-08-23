@@ -94,8 +94,17 @@ function removeFromTaskWillDoColumn(e) {
   }
 }
 
-function backToTaskWillDoColumn() {
-  console.log('backToTaskWillDoColumn')
+function backToTaskWillDoColumn(e) {
+  const index = parseInt(e.target.parentNode.parentNode.dataset.id);
+  const removedElement = columnTwo.splice(index, 1);
+
+  columnOne.push(removedElement);
+
+  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
+  createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
+
+  inputFilter.value = '';
+  headerState(e);
 }
 
 function removeFromTaskDoneColumn(e) {
