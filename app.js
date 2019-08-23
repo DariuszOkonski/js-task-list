@@ -7,7 +7,7 @@ const inputFilter = document.querySelector('.filter__input--js');
 const taskWillDoColumn = document.querySelector('.columns__items--one.columns__items--js');
 const taskDone = document.querySelector('.columns__items.columns__items--two.columns__items--two-js');
 
-const columnOne = ['aaa', 'aab', 'aac'];
+const columnOne = [];
 const columnTwo = [];
 
 btnDone = {
