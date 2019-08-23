@@ -1,5 +1,7 @@
 const headerSection = document.querySelector('.header');
 const btnAdd = document.querySelector('.header__btn--js');
+const btnClearOne = document.querySelector('.columns__btn--clearOne-js');
+const btnClearTwo = document.querySelector('.columns__btn--clearTwo-js');
 const inputNewTask = document.querySelector('.header__input--js');
 const inputFilter = document.querySelector('.filter__input--js');
 const taskWillDoColumn = document.querySelector('.columns__items--one.columns__items--js');
@@ -115,6 +117,20 @@ function removeFromTaskDoneColumn(e) {
   }
 }
 
+function clearColumnOne() {
+  if (confirm('Remove all tasks to do?')) {
+    columnOne.length = 0;
+    taskWillDoColumn.innerHTML = '';
+  }
+}
+
+function clearColumnTwo() {
+  if (confirm('Remove all tasks done?')) {
+    columnTwo.length = 0;
+    taskDone.innerHTML = '';
+  }
+}
+
 
 // Additional inner functions =======================
 
@@ -174,4 +190,6 @@ function createColumnElements(column, filteredArray, btnOne, btnTwo) {
 
 //Events ============================================
 btnAdd.addEventListener('click', addTask);
-document.querySelector('.filter__input--js').addEventListener('keyup', filter)
+document.querySelector('.filter__input--js').addEventListener('keyup', filter);
+btnClearOne.addEventListener('click', clearColumnOne);
+btnClearTwo.addEventListener('click', clearColumnTwo);
