@@ -57,7 +57,6 @@ function addTask() {
 function filter(e) {
 
   const findWorld = e.target.value.toLowerCase();
-
   const filteredArray = filterElements(findWorld);
 
   createColumnElements(taskWillDoColumn, filteredArray, btnDone, btnRemoveOne);
@@ -69,13 +68,8 @@ function moveToTaskDoneColumn(e) {
   const removedElement = columnOne.splice(index, 1);
 
   columnTwo.push(removedElement[0]);
-  // createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
-  // createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
   load();
-
-  // inputFilter.value = '';
-  // headerState(e);
-  clearHeader(e);
+  clearFilterInput(e);
 }
 
 function removeFromTaskWillDoColumn(e) {
@@ -84,10 +78,7 @@ function removeFromTaskWillDoColumn(e) {
     columnOne.splice(index, 1);
 
     createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
-
-    // inputFilter.value = '';
-    // headerState(e);
-    clearHeader(e);
+    clearFilterInput(e);
   }
 }
 
@@ -96,14 +87,8 @@ function backToTaskWillDoColumn(e) {
   const removedElement = columnTwo.splice(index, 1);
 
   columnOne.push(removedElement[0]);
-
-  // createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
-  // createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
   load();
-
-  // inputFilter.value = '';
-  // headerState(e);
-  clearHeader(e);
+  clearFilterInput(e);
 }
 
 function removeFromTaskDoneColumn(e) {
@@ -131,7 +116,7 @@ function clearColumnTwo() {
 
 // Additional inner functions =======================
 
-function clearHeader(e) {
+function clearFilterInput(e) {
   inputFilter.value = '';
   headerState(e);
 }
