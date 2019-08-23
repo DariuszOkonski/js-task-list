@@ -2,9 +2,11 @@ const headerSection = document.querySelector('.header');
 const btnAdd = document.querySelector('.header__btn--js');
 const inputNewTask = document.querySelector('.header__input--js');
 const taskWillDoColumn = document.querySelector('.columns__items--one.columns__items--js');
+const taskDone = document.querySelector('.columns__items.columns__items--two.columns__items--two-js');
+
 
 const columnOne = ['aaa', 'aab', 'aac', 'abc', 'aaa'];
-const columnTwo = ['bbb', 'bba'];
+const columnTwo = ['bbb', 'bba', 'bbc', 'bbd'];
 
 btnDone = {
   cls: 'btns__btn-done btns__btn-done--js',
@@ -12,16 +14,30 @@ btnDone = {
   evList: moveToTaskDoneColumn,
 }
 
-btnRemove = {
+btnRemoveOne = {
   cls: 'btns__btn-remove btns__btn-remove--js',
   text: 'remove',
   evList: removeFromTaskWillDoColumn
 }
 
+btnBack = {
+  cls: 'btns__btn-back btns__btn-back--js',
+  text: 'back',
+  evList: backToTaskWillDoColumn,
+}
+
+btnRemoveTwo = {
+  cls: 'btns__btn-remove btns__btn-remove--two-js',
+  text: 'remove',
+  evList: removeFromTaskDoneColumn,
+}
+
+
 load();
 
 function load() {
-  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemove);
+  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
+  createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
 }
 
 function addTask() {
@@ -33,12 +49,11 @@ function addTask() {
   columnOne.push(newTask)
   // localStorage.setItem('column-one', columnOne);
 
-  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemove);
+  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
   inputNewTask.value = '';
 }
 
 function filter(e) {
-  // console.log(e.target.value.length)
   if (e.target.value.length > 0) {
     inputNewTask.disabled = true;
     btnAdd.disabled = true;
@@ -51,7 +66,9 @@ function filter(e) {
 
   const findWorld = e.target.value.toLowerCase();
   const filteredArray = columnOne.filter(el => el.includes(findWorld))
-  createColumnElements(taskWillDoColumn, filteredArray, btnDone, btnRemove);
+
+  //TODO -- nową funkcje tak aby usuwał te same elementy z tablic columnOne and filteredArray
+  createColumnElements(taskWillDoColumn, filteredArray, btnDone, btnRemoveOne);
 }
 
 function moveToTaskDoneColumn() {
@@ -59,12 +76,25 @@ function moveToTaskDoneColumn() {
 }
 
 function removeFromTaskWillDoColumn(e) {
-  const index = parseInt(e.target.parentNode.parentNode.dataset.id);
-  columnOne.splice(index, 1);
+  if (confirm('Remove element from column one?')) {
+    const index = parseInt(e.target.parentNode.parentNode.dataset.id);
+    columnOne.splice(index, 1);
 
-  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemove);
+    createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
+  }
 }
 
+function backToTaskWillDoColumn() {
+  console.log('backToTaskWillDoColumn')
+}
+
+function removeFromTaskDoneColumn(e) {
+  if (confirm('Remove element from column two?')) {
+    const index = parseInt(e.target.parentNode.parentNode.dataset.id);
+    columnTwo.splice(index, 1);
+    createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
+  }
+}
 // Additional inner functions =======================
 
 function createButton(className, text, eventListener) {
@@ -76,7 +106,7 @@ function createButton(className, text, eventListener) {
 }
 
 function createColumnElements(column, filteredArray, btnOne, btnTwo) {
-  taskWillDoColumn.innerHTML = '';
+  column.innerHTML = '';
 
   filteredArray.forEach((task, index) => {
 
@@ -93,11 +123,11 @@ function createColumnElements(column, filteredArray, btnOne, btnTwo) {
     const div = document.createElement('div');
     div.className = 'btns';
 
-    const btnDone = createButton(btnOne.cls, btnOne.text, btnOne.evList);
-    div.appendChild(btnDone);
+    const tempBtnOne = createButton(btnOne.cls, btnOne.text, btnOne.evList);
+    div.appendChild(tempBtnOne);
 
-    const btnRemove = createButton(btnTwo.cls, btnTwo.text, btnTwo.evList);
-    div.appendChild(btnRemove);
+    const tempBtnTwo = createButton(btnTwo.cls, btnTwo.text, btnTwo.evList);
+    div.appendChild(tempBtnTwo);
 
     li.appendChild(div);
 
