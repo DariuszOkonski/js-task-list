@@ -1,41 +1,39 @@
 const headerSection = document.querySelector('.header');
 const btnAdd = document.querySelector('.header__btn--js');
 const inputNewTask = document.querySelector('.header__input--js');
-const taskWillDoColumn = document.querySelector('.columns__items--js');
+const taskWillDoColumn = document.querySelector('.columns__items--one.columns__items--js');
 
-const columnOne = [];
+const columnOne = ['aaa', 'aab', 'aac', 'abc'];
 const columnTwo = [];
+
+btnDone = {
+  cls: 'btns__btn-done btns__btn-done--js',
+  text: 'done',
+  evList: moveToTaskDoneColumn,
+}
+
+btnRemove = {
+  cls: 'btns__btn-remove btns__btn-remove--js',
+  text: 'remove',
+  evList: removeFromTaskWillDoColumn
+}
+
+load();
+
+function load() {
+  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemove);
+}
 
 function addTask() {
   if (inputNewTask.value.length === 0) {
     return alert('Add new Task');
   }
 
-  const li = document.createElement('li');
-  li.className = 'columns__item';
-
   const newTask = inputNewTask.value.toLowerCase();
   columnOne.push(newTask)
-  localStorage.setItem('column-one', columnOne);
+  // localStorage.setItem('column-one', columnOne);
 
-  const p = document.createElement('p');
-  p.className = 'paragraph';
-  p.innerText = newTask;
-
-  li.appendChild(p);
-
-  const div = document.createElement('div');
-  div.className = 'btns';
-
-  const btnDone = createButton('btns__btn-done btns__btn-done--js', 'done', moveToTaskDoneColumn);
-  div.appendChild(btnDone);
-
-  const btnRemove = createButton('btns__btn-remove btns__btn-remove--js', 'remove', removeFromTaskWillDoColumn);
-  div.appendChild(btnRemove);
-
-  li.appendChild(div);
-
-  taskWillDoColumn.appendChild(li);
+  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemove);
   inputNewTask.value = '';
 }
 
@@ -53,7 +51,7 @@ function filter(e) {
 
   const findWorld = e.target.value.toLowerCase();
   const filteredArray = columnOne.filter(el => el.includes(findWorld))
-  createFilteredElements(filteredArray);
+  createColumnElements(taskWillDoColumn, filteredArray, btnDone, btnRemove);
 }
 
 function moveToTaskDoneColumn() {
@@ -74,7 +72,7 @@ function createButton(className, text, eventListener) {
   return newButton;
 }
 
-function createFilteredElements(filteredArray) {
+function createColumnElements(column, filteredArray, btnOne, btnTwo) {
   taskWillDoColumn.innerHTML = '';
 
   filteredArray.forEach(task => {
@@ -91,16 +89,17 @@ function createFilteredElements(filteredArray) {
     const div = document.createElement('div');
     div.className = 'btns';
 
-    const btnDone = createButton('btns__btn-done btns__btn-done--js', 'done', moveToTaskDoneColumn);
+    // const btnDone = createButton('btns__btn-done btns__btn-done--js', 'done', moveToTaskDoneColumn);
+    const btnDone = createButton(btnOne.cls, btnOne.text, btnOne.evList);
     div.appendChild(btnDone);
 
-    const btnRemove = createButton('btns__btn-remove btns__btn-remove--js', 'remove', removeFromTaskWillDoColumn);
+    // const btnRemove = createButton('btns__btn-remove btns__btn-remove--js', 'remove', removeFromTaskWillDoColumn);
+    const btnRemove = createButton(btnTwo.cls, btnTwo.text, btnTwo.evList);
     div.appendChild(btnRemove);
 
     li.appendChild(div);
 
-    taskWillDoColumn.appendChild(li);
-
+    column.appendChild(li);
   });
 }
 
