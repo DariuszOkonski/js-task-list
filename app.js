@@ -3,8 +3,8 @@ const btnAdd = document.querySelector('.header__btn--js');
 const inputNewTask = document.querySelector('.header__input--js');
 const taskWillDoColumn = document.querySelector('.columns__items--one.columns__items--js');
 
-const columnOne = ['aaa', 'aab', 'aac', 'abc'];
-const columnTwo = [];
+const columnOne = ['aaa', 'aab', 'aac', 'abc', 'aaa'];
+const columnTwo = ['bbb', 'bba'];
 
 btnDone = {
   cls: 'btns__btn-done btns__btn-done--js',
@@ -38,7 +38,7 @@ function addTask() {
 }
 
 function filter(e) {
-  console.log(e.target.value.length)
+  // console.log(e.target.value.length)
   if (e.target.value.length > 0) {
     inputNewTask.disabled = true;
     btnAdd.disabled = true;
@@ -58,8 +58,11 @@ function moveToTaskDoneColumn() {
   console.log('moveToTaskDoneColumn');
 }
 
-function removeFromTaskWillDoColumn() {
-  console.log('removeFromTaskWillDoColumn');
+function removeFromTaskWillDoColumn(e) {
+  const index = parseInt(e.target.parentNode.parentNode.dataset.id);
+  columnOne.splice(index, 1);
+
+  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemove);
 }
 
 // Additional inner functions =======================
@@ -75,10 +78,11 @@ function createButton(className, text, eventListener) {
 function createColumnElements(column, filteredArray, btnOne, btnTwo) {
   taskWillDoColumn.innerHTML = '';
 
-  filteredArray.forEach(task => {
+  filteredArray.forEach((task, index) => {
 
     const li = document.createElement('li');
     li.className = 'columns__item';
+    li.setAttribute('data-id', `${index}`);
 
     const p = document.createElement('p');
     p.className = 'paragraph';
@@ -89,11 +93,9 @@ function createColumnElements(column, filteredArray, btnOne, btnTwo) {
     const div = document.createElement('div');
     div.className = 'btns';
 
-    // const btnDone = createButton('btns__btn-done btns__btn-done--js', 'done', moveToTaskDoneColumn);
     const btnDone = createButton(btnOne.cls, btnOne.text, btnOne.evList);
     div.appendChild(btnDone);
 
-    // const btnRemove = createButton('btns__btn-remove btns__btn-remove--js', 'remove', removeFromTaskWillDoColumn);
     const btnRemove = createButton(btnTwo.cls, btnTwo.text, btnTwo.evList);
     div.appendChild(btnRemove);
 
