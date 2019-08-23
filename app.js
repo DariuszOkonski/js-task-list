@@ -5,8 +5,8 @@ const inputFilter = document.querySelector('.filter__input--js');
 const taskWillDoColumn = document.querySelector('.columns__items--one.columns__items--js');
 const taskDone = document.querySelector('.columns__items.columns__items--two.columns__items--two-js');
 
-const columnOne = ['aaa', 'aab', 'aac', 'abc', 'aaa'];
-const columnTwo = ['bbb', 'bba', 'bbc', 'bbd'];
+const columnOne = ['aaa', 'aab', 'aac'];
+const columnTwo = ['bbb', 'bba'];
 
 btnDone = {
   cls: 'btns__btn-done btns__btn-done--js',
@@ -54,9 +54,9 @@ function addTask() {
 }
 
 function filter(e) {
-  headerState(e);
 
   const findWorld = e.target.value.toLowerCase();
+
 
   const filteredArray = [];
   columnOne.forEach(el => {
@@ -67,14 +67,14 @@ function filter(e) {
   });
 
   createColumnElements(taskWillDoColumn, filteredArray, btnDone, btnRemoveOne);
+  headerState(e);
 }
 
 function moveToTaskDoneColumn(e) {
   const index = parseInt(e.target.parentNode.parentNode.dataset.id);
   const removedElement = columnOne.splice(index, 1);
 
-  columnTwo.push(removedElement);
-
+  columnTwo.push(removedElement[0]);
   createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
   createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
 
@@ -98,7 +98,7 @@ function backToTaskWillDoColumn(e) {
   const index = parseInt(e.target.parentNode.parentNode.dataset.id);
   const removedElement = columnTwo.splice(index, 1);
 
-  columnOne.push(removedElement);
+  columnOne.push(removedElement[0]);
 
   createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
   createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
