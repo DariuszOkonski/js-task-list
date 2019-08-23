@@ -8,7 +8,7 @@ const taskWillDoColumn = document.querySelector('.columns__items--one.columns__i
 const taskDone = document.querySelector('.columns__items.columns__items--two.columns__items--two-js');
 
 const columnOne = ['aaa', 'aab', 'aac'];
-const columnTwo = ['bbb', 'bba'];
+const columnTwo = [];
 
 btnDone = {
   cls: 'btns__btn-done btns__btn-done--js',
@@ -49,7 +49,6 @@ function addTask() {
 
   const newTask = inputNewTask.value.toLowerCase();
   columnOne.push(newTask)
-  // localStorage.setItem('column-one', columnOne);
 
   createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
   inputNewTask.value = '';
@@ -59,14 +58,7 @@ function filter(e) {
 
   const findWorld = e.target.value.toLowerCase();
 
-
-  const filteredArray = [];
-  columnOne.forEach(el => {
-    if (el.includes(findWorld))
-      filteredArray.push(el);
-    else
-      filteredArray.push(null);
-  });
+  const filteredArray = filterElements(findWorld);
 
   createColumnElements(taskWillDoColumn, filteredArray, btnDone, btnRemoveOne);
   headerState(e);
@@ -77,11 +69,13 @@ function moveToTaskDoneColumn(e) {
   const removedElement = columnOne.splice(index, 1);
 
   columnTwo.push(removedElement[0]);
-  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
-  createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
+  // createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
+  // createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
+  load();
 
-  inputFilter.value = '';
-  headerState(e);
+  // inputFilter.value = '';
+  // headerState(e);
+  clearHeader(e);
 }
 
 function removeFromTaskWillDoColumn(e) {
@@ -91,8 +85,9 @@ function removeFromTaskWillDoColumn(e) {
 
     createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
 
-    inputFilter.value = '';
-    headerState(e);
+    // inputFilter.value = '';
+    // headerState(e);
+    clearHeader(e);
   }
 }
 
@@ -102,11 +97,13 @@ function backToTaskWillDoColumn(e) {
 
   columnOne.push(removedElement[0]);
 
-  createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
-  createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
+  // createColumnElements(taskWillDoColumn, columnOne, btnDone, btnRemoveOne);
+  // createColumnElements(taskDone, columnTwo, btnBack, btnRemoveTwo);
+  load();
 
-  inputFilter.value = '';
-  headerState(e);
+  // inputFilter.value = '';
+  // headerState(e);
+  clearHeader(e);
 }
 
 function removeFromTaskDoneColumn(e) {
@@ -134,6 +131,22 @@ function clearColumnTwo() {
 
 // Additional inner functions =======================
 
+function clearHeader(e) {
+  inputFilter.value = '';
+  headerState(e);
+}
+
+function filterElements(findWorld) {
+  const filteredArray = [];
+  columnOne.forEach(el => {
+    if (el.includes(findWorld))
+      filteredArray.push(el);
+    else
+      filteredArray.push(null);
+  });
+  return filteredArray;
+}
+
 function headerState(e) {
   if (e.target.value.length > 0) {
     inputNewTask.disabled = true;
@@ -158,9 +171,6 @@ function createColumnElements(column, filteredArray, btnOne, btnTwo) {
   column.innerHTML = '';
 
   filteredArray.forEach((task, index) => {
-
-    // console.log(task)
-    // TODO
     if (task !== null) {
       const li = document.createElement('li');
       li.className = 'columns__item';
